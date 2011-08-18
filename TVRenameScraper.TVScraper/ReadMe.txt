@@ -27,7 +27,7 @@ I am willing to improve on it or release the source code.
 SETUP:
 
 During installation you should be prompted for the path to your TVRename settings file.
-This is an XML file created by TVRename, usually found in your userdata folder,
+This is an XML file created by TVRename, usually found in your user application data folder,
 e.g. C:\Users\{USERNAME}\AppData\Roaming\TVRename\TVRename\2.1\TvRenameSettings.xml
 
 You should locate this file and copy and paste the path, including the file name, into
@@ -39,10 +39,7 @@ OTHER OPTIONS:
 
 There are some other options you can alter in the config file in the installation directory:
 
-	- Logging - you can turn on logging by altering the line
-		<level value="OFF"/>
-		to
-		<level value="DEBUG"/>
+	- Logging - logs of your last ten days of activity are recorded in your application data folder
 	- Disabling actions - you can stop this tool from creating any assets in your
 		library by setting the DisableAllActions value to true.
 	- Delays - you can add either a delay at the end of the program, or after each series
@@ -85,21 +82,7 @@ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF 
 IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
 OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-This tool uses log4net, which is licensed under the Apache License, Version 2.0
-
-Copyright 2011 Paul Houghton
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+This tool uses NLog, which is open source software, distributed under the terms of BSD license.
 
 All assets created by this tool are download from http://www.thetvdb.com, using
 their excellent API. Please support their good work by contributing

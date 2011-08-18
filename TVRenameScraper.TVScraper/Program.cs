@@ -79,7 +79,7 @@ namespace TVRenameScraper.TvScraper
                         localCache.AddShowTitle(tvRenameShow.TvdbId, seriesInfo.Title);
                         seriesTitle = seriesInfo.Title;
                     }
-                    ConsoleLogger.Highlight("'" + seriesTitle + "'.");
+                    ConsoleLogger.Highlight(seriesTitle);
 
                     bool needFanartJpg;
                     bool needFolderJpg;
