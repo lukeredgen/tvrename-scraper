@@ -22,13 +22,6 @@ using System.Runtime.InteropServices;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("6176ff9a-30f8-4a70-97ba-dc13ec47aa9d")]
 
-// Configure log4net using the .config file 
-[assembly: log4net.Config.XmlConfigurator(Watch = true)]
-// This will cause log4net to look for a configuration file 
-// called TestApp.exe.config in the application base 
-// directory (i.e. the directory containing TestApp.exe) 
-// The config file will be watched for changes. 
-
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version

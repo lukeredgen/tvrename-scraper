@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3ADE964AC25B2F4FFC1E73B7004658AB"
+        "MsmKey" = "8:_3A35C37048C3A1B402214C7D046B036E"
+        "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_73F80BD90B2D5543A59B75B488286B8B"
         "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B2C0CE27B6F5A68EFD1E22C471A75E83"
-        "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B2C0CE27B6F5A68EFD1E22C471A75E83"
+        "OwnerKey" = "8:_73F80BD90B2D5543A59B75B488286B8B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3ADE964AC25B2F4FFC1E73B7004658AB"
+        "OwnerKey" = "8:_3A35C37048C3A1B402214C7D046B036E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -161,7 +161,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=131000"
                 }
@@ -169,13 +169,18 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3ADE964AC25B2F4FFC1E73B7004658AB"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3A35C37048C3A1B402214C7D046B036E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_3A35C37048C3A1B402214C7D046B036E"
+                    {
+                    "Name" = "8:ICSharpCode.SharpZipLib.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:ICSharpCode.SharpZipLib.dll"
             "TargetName" = "8:"
@@ -195,13 +200,18 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_B2C0CE27B6F5A68EFD1E22C471A75E83"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_73F80BD90B2D5543A59B75B488286B8B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_73F80BD90B2D5543A59B75B488286B8B"
+                    {
+                    "Name" = "8:log4net.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:log4net.dll"
             "TargetName" = "8:"
