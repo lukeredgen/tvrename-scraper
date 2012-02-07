@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Xml;
 using System.Xml.Linq;
 using TVRenameScraper.TvScraper.LocalUtilities;
 using TVRenameScraper.TvScraper.Logging;
@@ -168,6 +169,36 @@ namespace TVRenameScraper.TvScraper
                                         FileInfo episodeFileInfo = new FileInfo(seasonDirectory.FullName + "\\" + episodeInfoFileName);
                                         string episodeThumbFileName = seasonDirectoryFile.Name.Replace(seasonDirectoryFile.Extension, ".tbn");
                                         FileInfo episodeThumbFileInfo = new FileInfo(seasonDirectory.FullName + "\\" + episodeThumbFileName);
+
+                                        // check if the nfo file is a valid xbmc file, and delete
+                                        // it if it is not
+                                        if (episodeFileInfo.Exists)
+                                        {
+                                            try
+                                            {
+                                                FileStream episodeFileInfoStream;
+                                                using (episodeFileInfoStream = episodeFileInfo.OpenRead())
+                                                {
+                                                    XDocument xd = XDocument.Load(episodeFileInfoStream);
+                                                    if (xd.Element("episodedetails") == null)
+                                                    {
+                                                        throw new Exception(
+                                                            string.Format(
+                                                                "NFO file found, but doesn't contain 'episodedetails' node at '{0}'",
+                                                                episodeFileInfo));
+                                                    }
+                                                }
+                                            }
+                                            catch (Exception)
+                                            {
+                                                // delete the .nfo file
+                                                ConsoleLogger.Log("Episode info is invalid: Season '" + season +
+                                                                      "', Episode '" + episode + "'. Deleting.");
+                                                episodeFileInfo.Delete();
+                                                episodeFileInfo.Refresh();
+                                            }
+                                        }
+
                                         if (!episodeThumbFileInfo.Exists || !episodeFileInfo.Exists)
                                         {
                                             if (seriesInfo == null)
@@ -179,6 +210,7 @@ namespace TVRenameScraper.TvScraper
                                                                                                         UseDvdOrder);
                                             if (episodeInfo != null)
                                             {
+                                                
                                                 if (!episodeFileInfo.Exists)
                                                 {
                                                     ConsoleLogger.Log("Episode info missing: Season '" + season +
@@ -231,7 +263,7 @@ namespace TVRenameScraper.TvScraper
             // give time to look at console
             ConsoleLogger.Log("Closing...");
             Thread.Sleep(CustomConfiguration.PostCompletionDelay);
-
+            
             // for each show
             // look in the base folder
 

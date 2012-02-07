@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TvScraper", "TVRenameScraper.TVScraper\TVScraper.csproj", "{B301C0D9-F534-48AB-AF27-F68514E04D15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TVScraper", "TVRenameScraper.TVScraper\TVScraper.csproj", "{B301C0D9-F534-48AB-AF27-F68514E04D15}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupInstaller", "TVRenameScraper.Installer\SetupInstaller.vdproj", "{E73E7596-2FFF-4082-A3E2-6D26C0F6526E}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TVRenameScraperSetup", "TVRenameScraper.Installer\SetupInstaller.vdproj", "{E73E7596-2FFF-4082-A3E2-6D26C0F6526E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

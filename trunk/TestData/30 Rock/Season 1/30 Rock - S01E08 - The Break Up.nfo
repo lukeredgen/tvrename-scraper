@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<episodedetails>
+  <title>The Break-Up</title>
+  <aired>2006-12-14</aired>
+  <rating>7.4</rating>
+  <season>1</season>
+  <episode>8</episode>
+  <plot>When Liz finally dumps her boyfriend Dennis, she prowls the singles scene under Jenna's tutelage. Love also stinks for Jack, as he discovers dating a Bush administration official has its downside. And Tracy and Toofer clash, which lands both in sensitivity training.</plot>
+  <credits>Dean Winters (Guest Star) / Rachel Dratch (Guest Star) / Chris Hansen (Guest Star) / Devin Richards (Guest Star) / Maulik Pancholy (Guest Star) / Katrina Bowden (Guest Star) / Keith Powell (Guest Star) / Lonny Ross (Guest Star) / Stan Tracy (Guest Star) / Henry Boyle (Guest Star) / Tina Fey (Writer)</credits>
+  <director>Adam Bernstein</director>
+  <actor>
+    <name>Alec Baldwin</name>
+    <role>Jack Donaghy</role>
+    <thumb>http://thetvdb.com/banners/actors/71287.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Tina Fey</name>
+    <role>Liz Lemon</role>
+    <thumb>http://thetvdb.com/banners/actors/71286.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Tracy Morgan</name>
+    <role>Tracy Jordan</role>
+    <thumb>http://thetvdb.com/banners/actors/71285.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Scott Adsit</name>
+    <role>Pete Hornberger</role>
+    <thumb>http://thetvdb.com/banners/actors/77774.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Jack McBrayer</name>
+    <role>Kenneth Parcell</role>
+    <thumb>http://thetvdb.com/banners/actors/77772.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Jane Krakowski</name>
+    <role>Jenna Maroney</role>
+    <thumb>http://thetvdb.com/banners/actors/71284.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Keith Powell</name>
+    <role>James 'Toofer' Spurlock</role>
+    <thumb>http://thetvdb.com/banners/actors/91441.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Katrina Bowden</name>
+    <role>Cerie Xerox</role>
+    <thumb>http://thetvdb.com/banners/actors/91431.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Judah Friedlander</name>
+    <role>Frank Rossitano</role>
+    <thumb>http://thetvdb.com/banners/actors/77773.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Kevin Brown</name>
+    <role>Dotcom</role>
+    <thumb>http://thetvdb.com/banners/actors/91461.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Maulik Pancholy</name>
+    <role>Jonathan</role>
+    <thumb>http://thetvdb.com/banners/actors/91451.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Lonny Ross</name>
+    <role>Josh Girard</role>
+    <thumb>http://thetvdb.com/banners/actors/77775.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Grizz Chapman</name>
+    <role>Grizz</role>
+    <thumb>http://thetvdb.com/banners/actors/107881.jpg</thumb>
+  </actor>
+  <fileinfo>
+    <streamdetails>
+      <audio>
+        <channels>2</channels>
+        <codec>mp3</codec>
+      </audio>
+      <video>
+        <aspect>1.773</aspect>
+        <codec>xvid</codec>
+        <duration>20 mins</duration>
+        <height>352</height>
+        <scantype>Progressive</scantype>
+        <width>624</width>
+      </video>
+    </streamdetails>
+  </fileinfo>
+</episodedetails>

@@ -31,12 +31,14 @@ namespace TVRenameScraper.TvScraper.LocalUtilities
                     try
                     {
                         XmlSerializer ser = new XmlSerializer(typeof(SerializableDictionary<long, string>));
-                        FileStream fs = File.Open(
+                        using (FileStream fs = File.Open(
                             XmlFullFilePath,
                             FileMode.Open,
                             FileAccess.Read,
-                            FileShare.Read);
-                        _tvdbShowTitles = (SerializableDictionary<long, string>)ser.Deserialize(fs);
+                            FileShare.Read))
+                        {
+                            _tvdbShowTitles = (SerializableDictionary<long, string>) ser.Deserialize(fs);
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -60,12 +62,14 @@ namespace TVRenameScraper.TvScraper.LocalUtilities
             try
             {
                 XmlSerializer ser = new XmlSerializer(_tvdbShowTitles.GetType());
-                FileStream fs = File.Open(
+                using (FileStream fs = File.Open(
                         XmlFullFilePath,
                         FileMode.OpenOrCreate,
                         FileAccess.Write,
-                        FileShare.ReadWrite);
-                ser.Serialize(fs, _tvdbShowTitles);
+                        FileShare.ReadWrite))
+                {
+                    ser.Serialize(fs, _tvdbShowTitles);
+                }
             }
             catch (Exception ex)
             {
