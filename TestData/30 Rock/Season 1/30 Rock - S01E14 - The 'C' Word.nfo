@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<episodedetails>
+  <title>The C Word</title>
+  <aired>2007-02-15</aired>
+  <rating>7.6</rating>
+  <season>1</season>
+  <episode>14</episode>
+  <plot>As shocked as she is to be called the c-word by Lutz, Liz is more horrified to realize he may be right. Meanwhile, Jack brings Tracy to a charity golf event to get closer to the chairman, however his plan backfires when Tracy acts too much like his uncensored self.</plot>
+  <credits>Darlene J. Camille (Guest Star) / Paul Doherty (Guest Star) / Tamara Fay (Guest Star) / Rachel Hamilton (Guest Star) / Kevin Miller (Guest Star) / Charlene Yi (Guest Star) / Teresa Yenque (Guest Star) / Tom Treadwell (Guest Star) / Sam Kitchin (Guest Star) / Justin Badger (Guest Star) / Tina Fey (Writer)</credits>
+  <director>Adam Bernstein</director>
+  <actor>
+    <name>Alec Baldwin</name>
+    <role>Jack Donaghy</role>
+    <thumb>http://thetvdb.com/banners/actors/71287.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Tina Fey</name>
+    <role>Liz Lemon</role>
+    <thumb>http://thetvdb.com/banners/actors/71286.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Tracy Morgan</name>
+    <role>Tracy Jordan</role>
+    <thumb>http://thetvdb.com/banners/actors/71285.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Scott Adsit</name>
+    <role>Pete Hornberger</role>
+    <thumb>http://thetvdb.com/banners/actors/77774.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Jack McBrayer</name>
+    <role>Kenneth Parcell</role>
+    <thumb>http://thetvdb.com/banners/actors/77772.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Jane Krakowski</name>
+    <role>Jenna Maroney</role>
+    <thumb>http://thetvdb.com/banners/actors/71284.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Keith Powell</name>
+    <role>James 'Toofer' Spurlock</role>
+    <thumb>http://thetvdb.com/banners/actors/91441.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Katrina Bowden</name>
+    <role>Cerie Xerox</role>
+    <thumb>http://thetvdb.com/banners/actors/91431.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Judah Friedlander</name>
+    <role>Frank Rossitano</role>
+    <thumb>http://thetvdb.com/banners/actors/77773.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Kevin Brown</name>
+    <role>Dotcom</role>
+    <thumb>http://thetvdb.com/banners/actors/91461.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Maulik Pancholy</name>
+    <role>Jonathan</role>
+    <thumb>http://thetvdb.com/banners/actors/91451.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Lonny Ross</name>
+    <role>Josh Girard</role>
+    <thumb>http://thetvdb.com/banners/actors/77775.jpg</thumb>
+  </actor>
+  <actor>
+    <name>Grizz Chapman</name>
+    <role>Grizz</role>
+    <thumb>http://thetvdb.com/banners/actors/107881.jpg</thumb>
+  </actor>
+  <fileinfo>
+    <streamdetails>
+      <audio>
+        <channels>2</channels>
+        <codec>mp3</codec>
+      </audio>
+      <video>
+        <aspect>1.810</aspect>
+        <codec>xvid</codec>
+        <duration>20 mins</duration>
+        <height>336</height>
+        <scantype>Progressive</scantype>
+        <width>608</width>
+      </video>
+    </streamdetails>
+  </fileinfo>
+</episodedetails>

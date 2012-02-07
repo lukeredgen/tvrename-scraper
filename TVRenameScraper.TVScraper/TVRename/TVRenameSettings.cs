@@ -24,10 +24,9 @@ namespace TVRenameScraper.TvScraper.TVRename
                 // LOG 
                 ConsoleLogger.Error(String.Format("Could not find or load TV Rename settings file (path : '{0}')",
                                                 tvRenameSettingsXmlpath));
-                throw;
             }
-            //<NamingStyle>{ShowName} - S{Season:2}E{Episode}[-E{Episode2}] - {EpisodeName}</NamingStyle>
 
+            //<NamingStyle>{ShowName} - S{Season:2}E{Episode}[-E{Episode2}] - {EpisodeName}</NamingStyle>
             try
             {
                 XElement namingStyleElem = (from p in SettingsXml.Descendants()
