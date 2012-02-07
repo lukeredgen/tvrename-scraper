@@ -50,6 +50,8 @@ There are some other options you can alter in the config file in the installatio
 
 History:
 
+v1.0.2.0 - Added facility to remove existing .nfo files that aren't valid for XBMC
+
 v1.0.0.0 - Released
 
 

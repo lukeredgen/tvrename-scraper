@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_3C572DC208382AA2FF3F657E93A0ED63"
+        "MsmKey" = "8:_448E2BC51C691E7FC94FF21CEE05965E"
+        "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8BA24A472AB6E0846778D82222463A46"
         "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,12 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_91A57E9F85964BA6C1B379B972AD90C9"
-        "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_8CBB5A4EABA647E08573B34BC1F67867"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_91A57E9F85964BA6C1B379B972AD90C9"
+        "OwnerKey" = "8:_448E2BC51C691E7FC94FF21CEE05965E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3C572DC208382AA2FF3F657E93A0ED63"
+        "OwnerKey" = "8:_8BA24A472AB6E0846778D82222463A46"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -74,6 +74,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
         "Release"
@@ -81,7 +94,7 @@
         "DisplayName" = "8:Release"
         "IsDebugOnly" = "11:FALSE"
         "IsReleaseOnly" = "11:TRUE"
-        "OutputFilename" = "8:Release\\TVRenameScraper_1_0_1_Setup.msi"
+        "OutputFilename" = "8:Release\\TVRenameScraper_1_0_2_Setup.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -169,20 +182,20 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C572DC208382AA2FF3F657E93A0ED63"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_448E2BC51C691E7FC94FF21CEE05965E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_3C572DC208382AA2FF3F657E93A0ED63"
+                    "_448E2BC51C691E7FC94FF21CEE05965E"
                     {
-                    "Name" = "8:ICSharpCode.SharpZipLib.dll"
+                    "Name" = "8:NLog.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ICSharpCode.SharpZipLib.dll"
+            "SourcePath" = "8:NLog.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_71334A70192E4491A3C9E14C86F28E2A"
@@ -200,20 +213,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_91A57E9F85964BA6C1B379B972AD90C9"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8BA24A472AB6E0846778D82222463A46"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_91A57E9F85964BA6C1B379B972AD90C9"
+                    "_8BA24A472AB6E0846778D82222463A46"
                     {
-                    "Name" = "8:NLog.dll"
+                    "Name" = "8:ICSharpCode.SharpZipLib.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:NLog.dll"
+            "SourcePath" = "8:ICSharpCode.SharpZipLib.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_71334A70192E4491A3C9E14C86F28E2A"
