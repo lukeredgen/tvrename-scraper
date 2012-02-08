@@ -172,32 +172,7 @@ namespace TVRenameScraper.TvScraper
 
                                         // check if the nfo file is a valid xbmc file, and delete
                                         // it if it is not
-                                        if (episodeFileInfo.Exists)
-                                        {
-                                            try
-                                            {
-                                                FileStream episodeFileInfoStream;
-                                                using (episodeFileInfoStream = episodeFileInfo.OpenRead())
-                                                {
-                                                    XDocument xd = XDocument.Load(episodeFileInfoStream);
-                                                    if (xd.Element("episodedetails") == null)
-                                                    {
-                                                        throw new Exception(
-                                                            string.Format(
-                                                                "NFO file found, but doesn't contain 'episodedetails' node at '{0}'",
-                                                                episodeFileInfo));
-                                                    }
-                                                }
-                                            }
-                                            catch (Exception)
-                                            {
-                                                // delete the .nfo file
-                                                ConsoleLogger.Log("Episode info is invalid: Season '" + season +
-                                                                      "', Episode '" + episode + "'. Deleting.");
-                                                episodeFileInfo.Delete();
-                                                episodeFileInfo.Refresh();
-                                            }
-                                        }
+                                        Xbmc.EpisodeInfoHandler.CheckInfoIsValid(ref episodeFileInfo, season, episode);
 
                                         if (!episodeThumbFileInfo.Exists || !episodeFileInfo.Exists)
                                         {
