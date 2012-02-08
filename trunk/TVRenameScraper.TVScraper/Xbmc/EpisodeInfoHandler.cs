@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.IO;
+using System.Xml.Linq;
 using TVRenameScraper.TvScraper.LocalUtilities;
 using TVRenameScraper.TvScraper.Logging;
 using TVRenameScraper.TvScraper.Tvdb;
@@ -105,6 +107,46 @@ namespace TVRenameScraper.TvScraper.Xbmc
                 ConsoleLogger.Warning("not found!");
             }
             ConsoleLogger.LogEnd("done.");
+        }
+
+        /// <summary>
+        /// Checks if the NFO file for an episode is a valid NFO file
+        /// and removes it if not
+        /// </summary>
+        /// <param name="episodeFileInfo">FileInfo object</param>
+        /// <param name="season">Number of the season</param>
+        /// <param name="episode">Number of the episode</param>
+        public static void CheckInfoIsValid(ref FileInfo episodeFileInfo, int season, int episode)
+        {
+            if (episodeFileInfo.Exists)
+            {
+                try
+                {
+                    FileStream episodeFileInfoStream;
+                    using (episodeFileInfoStream = episodeFileInfo.OpenRead())
+                    {
+                        XDocument xd = XDocument.Load(episodeFileInfoStream);
+                        if (xd.Element("episodedetails") == null)
+                        {
+                            throw new Exception(
+                                string.Format(
+                                    "NFO file found, but doesn't contain 'episodedetails' node at '{0}'",
+                                    episodeFileInfo));
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    // delete the .nfo file
+                    ConsoleLogger.Log("Episode info is invalid: Season '" + season +
+                                          "', Episode '" + episode + "'. Deleting.");
+                    if (!CustomConfiguration.DisableAllFileSystemActions)
+                    {
+                        episodeFileInfo.Delete();
+                    }
+                    episodeFileInfo.Refresh();
+                }
+            }
         }
     }
 }
