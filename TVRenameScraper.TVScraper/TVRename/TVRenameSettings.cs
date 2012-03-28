@@ -12,6 +12,7 @@ namespace TVRenameScraper.TvScraper.TVRename
         public string NamingStyle { get; set; }
         public List<string> VideoExtensions { get; set; }
         public List<string > OtherExtensions { get; set; }
+        public string SpecialsFolderName { get; set; }
 
         public TVRenameSettings(string tvRenameSettingsXmlpath)
         {
@@ -38,6 +39,20 @@ namespace TVRenameScraper.TvScraper.TVRename
             {
                 // LOG
                 ConsoleLogger.Error("Could not find naming style element in TV Rename Config");
+                throw;
+            }
+            //<SpecialsFolderName>Specials</SpecialsFolderName>
+            try
+            {
+                XElement specialsNameElem = (from p in SettingsXml.Descendants()
+                                             where p.Name == "SpecialsFolderName"
+                                            select p).First();
+                SpecialsFolderName = specialsNameElem.Value;
+            }
+            catch (Exception)
+            {
+                // LOG
+                ConsoleLogger.Error("Could not find specials folder name element in TV Rename Config");
                 throw;
             }
             //<VideoExtensions>.avi;.mpg;.mpeg;.mkv;.mp4;.wmv;.divx;.ogm;.qt;.rm</VideoExtensions>
