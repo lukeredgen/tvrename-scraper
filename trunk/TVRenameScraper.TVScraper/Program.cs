@@ -123,11 +123,19 @@ namespace TVRenameScraper.TvScraper
                     // process each season
                     if (tvRenameShow.UseFolderPerSeason)
                     {
-                        var seasonDirectories = showFolder.GetDirectories(tvRenameShow.SeasonFolderName + "*");
+                        var seasonDirectories = showFolder.GetDirectories(tvRenameShow.SeasonFolderName + "*").ToList();
+                        // add specials folder if set in TV Rename
+                        if (!string.IsNullOrEmpty(_tvRenameSettings.SpecialsFolderName))
+                        {
+                            seasonDirectories =
+                                seasonDirectories.Concat(showFolder.GetDirectories(_tvRenameSettings.SpecialsFolderName))
+                                    .ToList();
+                        }
                         foreach (var seasonDirectory in seasonDirectories)
                         {
                             // get the season number and test if the thumbnail exists
-                            int seasonNumber = int.Parse(seasonDirectory.Name.Replace(tvRenameShow.SeasonFolderName, string.Empty));
+                            int seasonNumber = seasonDirectory.Name.Equals(_tvRenameSettings.SpecialsFolderName) ? 0 :
+                                int.Parse(seasonDirectory.Name.Replace(tvRenameShow.SeasonFolderName, string.Empty));
                             
                             // look for season thumbnail
                             string seasonThumbFileName = GetSeasonThumbnailName(seasonNumber);
