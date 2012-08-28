@@ -98,6 +98,7 @@
     <Compile Include="Installer\CustomInstaller.Designer.cs">
       <DependentUpon>CustomInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocalUtilities\OtherDataCache.cs" />
     <Compile Include="LocalUtilities\SerializableDictionary.cs" />
     <Compile Include="LocalUtilities\XmlCache.cs" />
     <Compile Include="Logging\ConsoleLogger.cs" />

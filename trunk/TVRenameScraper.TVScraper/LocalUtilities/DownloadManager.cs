@@ -43,5 +43,26 @@ namespace TVRenameScraper.TvScraper.LocalUtilities
                 }
             }
         }
+
+        public static string DownloadAndReturnFileAsString(string url)
+        {
+            if (!string.IsNullOrWhiteSpace(url))
+            {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+
+                // execute the request
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+                // we will read data via the response stream
+                Stream resStream = response.GetResponseStream();
+                    
+                if (resStream != null)
+                {
+                    StreamReader reader = new StreamReader(resStream);
+                    return reader.ReadToEnd();
+                }
+            }
+            return null;
+        }
     }
 }

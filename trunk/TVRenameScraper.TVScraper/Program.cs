@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Xml;
 using System.Xml.Linq;
 using TVRenameScraper.TvScraper.LocalUtilities;
 using TVRenameScraper.TvScraper.Logging;
@@ -20,6 +20,8 @@ namespace TVRenameScraper.TvScraper
         private const string ALL_SEASON_FILE_NAME = "season-all.tbn";
         private const string SHOW_INFO_FILE_NAME = "tvshow.nfo";
         private const string SINGLE_SEASON_FILE_NAME_PATTERN = "season{0}.tbn";
+
+        private const string LATEST_VERSION_URL = "http://tvrename-scraper.googlecode.com/files/versionnum.txt";
 
         private static TVRenameSettings _tvRenameSettings;
         private static TvdbAccessor _theTvdb;
@@ -52,6 +54,8 @@ namespace TVRenameScraper.TvScraper
             }
 
             ConsoleLogger.Log("Launching scraper");
+
+            CheckForNewVersion();
 
             ConsoleLogger.LogStart("Initialising cache...");
             XmlCache localCache = new XmlCache();
@@ -137,21 +141,30 @@ namespace TVRenameScraper.TvScraper
                             int seasonNumber = seasonDirectory.Name.Equals(_tvRenameSettings.SpecialsFolderName) ? 0 :
                                 int.Parse(seasonDirectory.Name.Replace(tvRenameShow.SeasonFolderName, string.Empty));
                             
-                            // look for season thumbnail
+                            // look for season thumbnail or folder.jpg for the season
                             string seasonThumbFileName = GetSeasonThumbnailName(seasonNumber);
+                            string seasonFolderJpgFileName = seasonDirectory.FullName + "\\" + FOLDER_FILE_NAME;
                             FileInfo seasonThumb = new FileInfo(showFolder + "\\" + seasonThumbFileName);
-                            if (!seasonThumb.Exists)
+                            FileInfo seasonFolderJpg = new FileInfo(seasonFolderJpgFileName);
+                            if (!seasonThumb.Exists || (CustomConfiguration.GetFolderJpgForSeasons && !seasonFolderJpg.Exists))
                             {
                                 if (seriesInfo == null)
                                 {
                                     seriesInfo = TheTvdb.GetSeriesInfo(tvRenameShow.TvdbId);
                                 }
-                                // download the missing season thumbnail
-                                ConsoleLogger.LogStart("Season thumbnail needed for '" + seriesInfo.Title + "', season '" + seasonNumber + "'...");
+                                // download the missing season thumbnail or folder.jpg for the season
+                                ConsoleLogger.LogStart("Season thumbnail and/or folder.jpg needed for '" + seriesInfo.Title + "', season '" + seasonNumber + "'...");
                                 BannerInfo bestMatchBanner = TheTvdb.GetSeasonBanner(seasonNumber, seriesInfo);
                                 if (bestMatchBanner != null)
                                 {
-                                    Xbmc.SeasonInfoHandler.CreateThumbnailArt(bestMatchBanner, tvRenameShow.FolderPath, seasonThumbFileName);
+                                    if (!seasonThumb.Exists)
+                                    {
+                                        Xbmc.SeasonInfoHandler.CreateThumbnailArt(bestMatchBanner, tvRenameShow.FolderPath, seasonThumbFileName);
+                                    }
+                                    if (CustomConfiguration.GetFolderJpgForSeasons && !seasonFolderJpg.Exists)
+                                    {
+                                        Xbmc.SeasonInfoHandler.CreateThumbnailArt(bestMatchBanner, seasonDirectory.FullName, FOLDER_FILE_NAME);
+                                    }
                                     ConsoleLogger.LogEnd("downloaded.");
                                 } else
                                 {
@@ -291,6 +304,30 @@ namespace TVRenameScraper.TvScraper
         private static string GetSeasonThumbnailName(int seasonNumber)
         {
             return string.Format(SINGLE_SEASON_FILE_NAME_PATTERN, seasonNumber.ToString().PadLeft(2, '0'));
+        }
+
+        private static void CheckForNewVersion()
+        {
+            try
+            {
+                if (OtherDataCache.LastCheckedForNewVersionDateTime < DateTime.Now.AddDays(-1))
+                {
+                    ConsoleLogger.Log("Checking for new version...");
+                    var version = Assembly.GetEntryAssembly().GetName().Version;
+                    string currentVersion = string.Format("{0}.{1}.{2}", version.Major, version.Minor, version.Build);
+                    string latestversion = DownloadManager.DownloadAndReturnFileAsString(LATEST_VERSION_URL + "?ver=" +
+                                           currentVersion);
+                    if (!latestversion.Equals(currentVersion))
+                    {
+                        ConsoleLogger.Highlight("A new version is available! Download now if you want");
+                    }
+                    OtherDataCache.LastCheckedForNewVersionDateTime = DateTime.Now;
+                }
+            }
+            catch (Exception)
+            {
+                // do nothing
+            }
         }
     }
 }
