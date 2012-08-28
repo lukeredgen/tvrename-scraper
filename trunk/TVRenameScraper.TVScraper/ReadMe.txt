@@ -11,7 +11,7 @@ It will download:
 		tvshow.nfo
 	For each season:
 		seasonXX.tbn
-        folder.jpg (optionally)
+        	folder.jpg (optionally)
 	For each episode:
 		EPISODE_NAME.nfo
 		EPISODE_NAME.tbn
@@ -47,8 +47,8 @@ There are some other options you can alter in the config file in the installatio
 		has been processed, to give you time to examine the console output. You can
 		edit the values of the PostCompletionDelay and PostSeriesDelay keys.
 		They should be values in milliseconds (0 for none).
-    - Folder.jpg for seasons - Change the value GetFolderJpgForSeasons to "true" to download
-        folder.jpg into each season folder
+   	- Folder.jpg for seasons - Change the value GetFolderJpgForSeasons to "true" to download
+        	folder.jpg into each season folder
 
 
 History:
