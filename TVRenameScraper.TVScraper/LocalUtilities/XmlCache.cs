@@ -45,14 +45,10 @@ namespace TVRenameScraper.TvScraper.LocalUtilities
                         throw new Exception("Could Not Serialize object to " + XmlFullFilePath, ex);
                     }
                 }
-
             }
             catch
             {
             }
-            
-            
-            
         }
 
         public void SaveCache()

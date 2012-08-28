@@ -49,6 +49,21 @@ namespace TVRenameScraper.TvScraper.LocalUtilities
             }
         }
 
+        public static bool GetFolderJpgForSeasons
+        {
+            get
+            {
+                try
+                {
+                    return bool.Parse(ConfigurationManager.AppSettings["GetFolderJpgForSeasons"]);
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
         public static string TVRenamePath
         {
             get
